@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<!--================================================================================================
+		HEAD
+-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+	<title>Peep Tester</title>
+	<style type="text/css">
+	.default {
+		font-family: monospace;
+		font-size: 99%;
+	}
+	</style>
+</head>
+
+<!--================================================================================================
+		ここからBODY
+-->
+<body class="default" style="height:100%;width:98%;margin:0 auto;">
+
+<!--================================================================================================
+		NO SCRIPT
+-->
+<noscript>
+<p>JavaScriptがOFFになっています。以下のボタンは使用出来ません。</p>
+</noscript>
+
+<!--================================================================================================
+		JavaScript
+-->
+<script type="text/javascript">
+/*--------------------------------------------------
+	引数
+	prefixURL String 検索キーワードの前に付けるURL
+	suffixURL String 検索キーワードの後ろに付けるURL
+	is_escape boolenan 検索キーワードをescapeするか。falseならencodeURIComponent
+		escape,encodeURIComponent について
+		http://groundwalker.com/blog/2007/02/javascript_escape_encodeuri_encodeuricomponent_.html
+*/
+function fire(url){
+	if(!confirm("開きますか？\n"+url)){ return; }
+	window.open(url, "_top");
+}
+</script>
+
+<form name="f">
+
+<p>ビルド：<br>
+	<select name="protocol" class="default" size="2">
+	<option value="peep:/" selected>peep:</option>
+	<option value="peep-dev:/">peep-dev:</option>
+	</select></p>
+
+<p>/story/<input class="default" type="text" placeholder="story_id" size="10" value="" name="story_id">
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/story/'+document.f.story_id.value)">
+	</p>
+
+<p>/purchase/store_products
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/purchase/store_products')">
+	</p>
+
+<p>/account/mylist
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/account/mylist')">
+	</p>
+
+<p>/account/read_histories
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/account/read_histories')">
+	</p>
+
+<p>/webview/<input class="default" type="text" placeholder="URL(not encoded)" style="width:96%;" value="" name="url">
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/webview/'+encodeURIComponent(document.f.url.value))">
+	</p>
+
+<p>/authors/<input class="default" type="text" placeholder="author_id" size="10" value="" name="author_id">
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/authors/'+document.f.author_id.value)">
+	</p>
+
+<p>/withdraw?token=<input class="default" type="text" placeholder="token" size="30" value="" name="token">
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/withdraw?token='+document.f.token.value)">
+	</p>
+
+</form>
+
+<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.8</p>
+
+<!--================================================================================================
+		BODY ここまで
+-->
+</body>
+</html>

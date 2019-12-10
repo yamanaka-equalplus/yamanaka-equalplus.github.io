@@ -78,6 +78,11 @@ function fire(url){
 		onclick="fire(document.f.protocol.value+'/webview/'+encodeURIComponent(document.f.url.value))">
 	</p>
 
+<p>/webview_cci/<br><input class="default" type="text" placeholder="URL(not encoded)" style="width:96%;" value="" name="cci_url">
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/webview_cci/'+encodeURIComponent(document.f.cci_url.value))">
+	</p>
+
 <p>/authors/<input class="default" type="text" placeholder="author_id" size="10" value="" name="author_id">
 	<br><input class="default" type="button" value="開く"
 		onclick="fire(document.f.protocol.value+'/authors/'+document.f.author_id.value)">
@@ -100,7 +105,7 @@ function fire(url){
 
 </form>
 
-<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.10.1</p>
+<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.11.0</p>
 
 <!--================================================================================================
 		BODY ここまで

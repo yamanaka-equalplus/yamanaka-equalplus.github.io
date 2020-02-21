@@ -49,8 +49,8 @@ function fire(url){
 
 <p>ビルド：<br>
 	<select name="protocol" class="default" size="2">
-	<option value="peep:/" selected>peep:</option>
-	<option value="peep-dev:/">peep-dev:</option>
+	<option value="peep:/">peep:</option>
+	<option value="peep-dev:/" selected>peep-dev:</option>
 	</select></p>
 
 <p>/story/<input class="default" type="text" placeholder="story_id" size="10" value="" name="story_id">
@@ -103,9 +103,15 @@ function fire(url){
 		onclick="fire(document.f.protocol.value+'/withdraw?token='+document.f.token.value)">
 	</p>
 
+<hr>
+<p>go to: <input class="default" type="text" placeholder="URL" value="https://www.apple.com/jp" size="30" value="" name="gotoUrl">
+	<br><input class="default" type="button" value="遷移"
+		onclick="window.open(document.f.gotoUrl.value,'_self');">
+	</p>
+
 </form>
 
-<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.11.0</p>
+<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.12.0</p>
 
 <!--================================================================================================
 		BODY ここまで

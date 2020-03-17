@@ -98,32 +98,46 @@ function fire(url){
 		onclick="fire(document.f.protocol.value+'/topic/'+encodeURIComponent(document.f.api_path.value))">
 	</p>
 
+<p>/?action=purchaseIntent&bundleId=&productIdentifier=<select name="purchaseIntentProduct" class="default">
+	<option value="jp.peep.app.subscription.1week">subscription.1week</option>
+	<option value="jp.peep.app.subscription.1month" selected>subscription.1month</option>
+	<option value="jp.peep.app.consumable.200peep">consumable.200peep</option>
+	<option value="jp.peep.app.consumable.400peep">consumable.400peep</option>
+	<option value="jp.peep.app.consumable.800peep">consumable.800peep</option>
+	<option value="jp.peep.app.consumable.1200peep">consumable.1200peep</option>
+	</select>
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/?action=purchaseIntent&bundleId=&productIdentifier='+document.f.purchaseIntentProduct.value)">
+	</p>
+
 <p>/withdraw?token=<input class="default" type="text" placeholder="token" size="30" value="" name="token">
 	<br><input class="default" type="button" value="開く"
 		onclick="fire(document.f.protocol.value+'/withdraw?token='+document.f.token.value)">
 	</p>
 
 <hr>
-https://purchase.peep.jp/exec
-<p><a href="https://purchase.peep.jp/exec?purchase_type=&product_id=jp.peep.app.subscription.1week">1week</a></p>
-<p><a href="https://purchase.peep.jp/exec?purchase_type=&product_id=jp.peep.app.subscription.1month">1month</a></p>
 
-<p><a href="https://purchase.peep.jp/exec?purchase_type=&product_id=jp.peep.app.consumable.200peep">200peep</a></p>
-<p><a href="https://purchase.peep.jp/exec?purchase_type=&product_id=jp.peep.app.consumable.400peep">400peep</a></p>
-<p><a href="https://purchase.peep.jp/exec?purchase_type=&product_id=jp.peep.app.consumable.800peep">800peep</a></p>
-<p><a href="https://purchase.peep.jp/exec?purchase_type=&product_id=jp.peep.app.consumable.1200peep">1200peep</a></p>
-
-<p><a href="https://purchase.peep.jp/exec?get_video_reward">get_video_reward</a></p>
+<p>https://purchase.peep.jp/exec?purchase_type=&product_id=<select name="execProduct" class="default">
+	<option value="jp.peep.app.subscription.1week">subscription.1week</option>
+	<option value="jp.peep.app.subscription.1month" selected>subscription.1month</option>
+	<option value="jp.peep.app.consumable.200peep">consumable.200peep</option>
+	<option value="jp.peep.app.consumable.400peep">consumable.400peep</option>
+	<option value="jp.peep.app.consumable.800peep">consumable.800peep</option>
+	<option value="jp.peep.app.consumable.1200peep">consumable.1200peep</option>
+	</select>
+	<br><input class="default" type="button" value="遷移"
+		onclick="fire('https://purchase.peep.jp/exec?purchase_type=&product_id='+document.f.execProduct.value)">
+	</p>
 
 <hr>
 <p>go to: <input class="default" type="text" placeholder="URL" value="https://www.apple.com/jp" size="30" value="" name="gotoUrl">
 	<br><input class="default" type="button" value="遷移"
-		onclick="window.open(document.f.gotoUrl.value,'_self');">
+		onclick="window.open(document.f.gotoUrl.value,'_top');">
 	</p>
 
 </form>
 
-<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.13.1</p>
+<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.14.0</p>
 
 <!--================================================================================================
 		BODY ここまで

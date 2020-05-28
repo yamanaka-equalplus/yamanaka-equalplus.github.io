@@ -98,6 +98,11 @@ function fire(url){
 		onclick="fire(document.f.protocol.value+'/topic/'+encodeURIComponent(document.f.api_path.value))">
 	</p>
 
+<p>/open?url=<br><input class="default" type="text" placeholder="URL(not encoded)" style="width:96%;" value="" name="open_url">
+	<br><input class="default" type="button" value="開く"
+		onclick="fire(document.f.protocol.value+'/open?url='+encodeURIComponent(document.f.open_url.value))">
+	</p>
+
 <p>/?action=purchaseIntent&bundleId=&productIdentifier=<select name="purchaseIntentProduct" class="default">
 	<option value="jp.peep.app.subscription.1week" selected>subscription.1week</option>
 	<option value="jp.peep.app.subscription.1month">subscription.1month</option>
@@ -137,7 +142,7 @@ function fire(url){
 
 </form>
 
-<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.14.1</p>
+<p style="color:#C0C0C0;font-size:70%;text-align:center;">ver.15.0</p>
 
 <!--================================================================================================
 		BODY ここまで
